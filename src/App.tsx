@@ -72,7 +72,7 @@ export default function Portfolio() {
       description:
         "Responsive empowerment website with online educational content.",
       tech: ["Webflow", "Figma"],
-      image: "/src/assets/Screenshot 2025-08-16 083122.png",
+      image: "./src/assets/Screenshot 2025-08-16 083122.png",
       link: "https://equivoice.webflow.io/",
       category: "web",
     },
@@ -81,7 +81,7 @@ export default function Portfolio() {
       description:
         "A simple web application to manage book lists digitally with localStorage.",
       tech: ["HTML", "CSS", "JavaScript"],
-      image: "/src/assets/image.png",
+      image: "./assets/image.png",
       link: "https://fahmi-blip.github.io/Bookshelf-App/",
       category: "web",
     },
