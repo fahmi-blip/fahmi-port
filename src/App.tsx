@@ -99,7 +99,7 @@ export default function Portfolio() {
       description:
       "College project about application for ordering food and drinks.",
       tech: ["Figma", "Prototyping", "User Research"],
-      image: "/Iphone 16.png",
+      image: "/iPhone 16.png",
       link: "https://www.figma.com/design/pLUo5APZyVOZu6BeQtfal1/Pujasera?node-id=0-1&t=iyPabscMzHugHGA2-1",
       category: "uiux",
     },
