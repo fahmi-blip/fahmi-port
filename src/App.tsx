@@ -63,7 +63,7 @@ export default function Portfolio() {
       description:
         "E-commerce solution using html, css, javascript integrated payment",
       tech: ["HTML", "CSS", "JavaScript"],
-      image: "/assets/Screenshot 2025-08-17 160031.png",
+      image: "/Screenshot 2025-08-17 160031.png",
       link: "https://fahmi-blip.github.io/e-commerce/",
       category: "web",
     },
@@ -72,7 +72,7 @@ export default function Portfolio() {
       description:
         "Responsive empowerment website with online educational content.",
       tech: ["Webflow", "Figma"],
-      image: "./src/assets/Screenshot 2025-08-16 083122.png",
+      image: "/Screenshot 2025-08-16 083122.png",
       link: "https://equivoice.webflow.io/",
       category: "web",
     },
