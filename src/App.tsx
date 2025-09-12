@@ -81,7 +81,7 @@ export default function Portfolio() {
       description:
         "A simple web application to manage book lists digitally with localStorage.",
       tech: ["HTML", "CSS", "JavaScript"],
-      image: "./assets/image.png",
+      image: "/image.png",
       link: "https://fahmi-blip.github.io/Bookshelf-App/",
       category: "web",
     },
@@ -90,7 +90,7 @@ export default function Portfolio() {
       description:
         "Project from a national competition that won 3rd place",
       tech: ["Figma", "Prototyping", "User Research"],
-      image: "/src/assets/Screenshot 2025-08-17 161543.png",
+      image: "/Screenshot 2025-08-17 161543.png",
       link: "https://www.figma.com/design/Ui7GPPP9ZH5XLfPFwUooEh/ResQ?node-id=912-66&t=gvV65VOxTb8avhhV-1",
       category: "uiux",
     },
@@ -99,7 +99,7 @@ export default function Portfolio() {
       description:
       "College project about application for ordering food and drinks.",
       tech: ["Figma", "Prototyping", "User Research"],
-      image: "/src/assets/Iphone 16.png",
+      image: "/Iphone 16.png",
       link: "https://www.figma.com/design/pLUo5APZyVOZu6BeQtfal1/Pujasera?node-id=0-1&t=iyPabscMzHugHGA2-1",
       category: "uiux",
     },
@@ -153,7 +153,7 @@ useEffect(()=>{
           <div className="flex flex-col items-center justify-center min-h-screen text-center px-4 ">
             <div className="max-w-4xl mx-auto">
               <img
-                src="./src/assets/20240814_173945.jpg"
+                src="/20240814_173945.jpg"
                 alt="Profile"
                 className="w-32 h-32 rounded-full mx-auto mb-18 object-cover border-4 border-white shadow-lg scale-180 m-8"
               />
@@ -298,7 +298,7 @@ useEffect(()=>{
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <img
-                    src="./src/assets/20240814_173945.jpg"
+                    src="/20240814_173945.jpg"
                     alt="About me"
                     className="w-4xl h-fit rounded-lg shadow-lg"
                   />
