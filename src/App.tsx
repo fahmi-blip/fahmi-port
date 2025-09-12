@@ -63,7 +63,7 @@ export default function Portfolio() {
       description:
         "E-commerce solution using html, css, javascript integrated payment",
       tech: ["HTML", "CSS", "JavaScript"],
-      image: "/src/assets/Screenshot 2025-08-17 160031.png",
+      image: "/assets/Screenshot 2025-08-17 160031.png",
       link: "https://fahmi-blip.github.io/e-commerce/",
       category: "web",
     },
