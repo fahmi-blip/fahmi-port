@@ -47,8 +47,9 @@ export default function Portfolio() {
     "TypeScript",
     "React",
     "Python",
+    "Laravel",
     "Java",
-    "MongoDB",
+    "MySql",
     "Git",
     "Figma",
     "Adobe Creative Suite",
@@ -77,14 +78,23 @@ export default function Portfolio() {
       category: "web",
     },
     {
-      title: "Bookshelf App",
+      title: "Admin Dashboard Storage and Sales of goods",
       description:
-        "A simple web application to manage book lists digitally with localStorage.",
-      tech: ["HTML", "CSS", "JavaScript"],
-      image: "/src/assets/image.png",
-      link: "https://fahmi-blip.github.io/Bookshelf-App/",
+        "Website for managing and selling items.",
+      tech: ["MySql", "TypeScript", "React","Express.js"],
+      image: "/src/assets/Screenshot 2025-12-25 215524.png",
+      link: "#",
       category: "web",
     },
+    // {
+    //   title: "Bookshelf App",
+    //   description:
+    //     "A simple web application to manage book lists digitally with localStorage.",
+    //   tech: ["HTML", "CSS", "JavaScript"],
+    //   image: "/src/assets/image.png",
+    //   link: "https://fahmi-blip.github.io/Bookshelf-App/",
+    //   category: "web",
+    // },
     {
       title: "ResQ: AI-based disaster preparedness",
       description:
@@ -103,15 +113,15 @@ export default function Portfolio() {
       link: "https://www.figma.com/design/pLUo5APZyVOZu6BeQtfal1/Pujasera?node-id=0-1&t=iyPabscMzHugHGA2-1",
       category: "uiux",
     },
-    // {
-    //   title: "Brand Identity Design",
-    //   description:
-    //     "Complete brand identity package including logo, color palette, and brand guidelines.",
-    //   tech: ["Adobe Illustrator", "Photoshop", "Brand Strategy", "Typography"],
-    //   image: "/brand-identity-design.png",
-    //   link: "#",
-    //   category: "graphic",
-    // },
+    {
+      title: "LUMINA: An AI-Based Digital Solution for Mental Health Management in Indonesian Youth",
+      description:
+        "Individual project from course assignments.",
+      tech: ["Figma", "Prototyping", "User Research"],
+      image: "/src/assets/iPhone 15 Pro.png",
+      link: "https://www.figma.com/design/dlG0CXnWZeJH1ggSGnyJxZ/Project-UIUX-Prak?node-id=51-14&t=UTsPSfDeoHuCsORm-1",
+      category: "uiux",
+    },
     // {
     //   title: "Music Festival Poster",
     //   description:
@@ -150,25 +160,25 @@ useEffect(()=>{
     switch (activeSection) {
       case "home":
         return (
-          <div className="flex flex-col items-center justify-center min-h-screen text-center px-4 ">
+          <div className="flex flex-col items-center justify-center min-h-screen px-4 text-center ">
             <div className="max-w-4xl mx-auto">
               <img
                 src="./src/assets/20240814_173945.jpg"
                 alt="Profile"
-                className="w-32 h-32 rounded-full mx-auto mb-18 object-cover border-4 border-white shadow-lg scale-180 m-8"
+                className="object-cover w-32 h-32 m-8 mx-auto border-4 border-white rounded-full shadow-lg mb-18 scale-180"
               />
-              <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-bl">
+              <h1 className="mb-4 text-4xl font-bold md:text-6xl bg-gradient-to-bl">
                 Fahmi Syihaab
               </h1>
-              <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
+              <p className="mb-8 text-xl text-gray-600 md:text-2xl dark:text-gray-300">
                 Full Stack Developer & UI/UX Designer
               </p>
-              <p className="text-lg text-gray-500 dark:text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+              <p className="max-w-2xl mx-auto mb-12 text-lg leading-relaxed text-gray-500 dark:text-gray-300">
                 I create beautiful, functional, and user-centered digital
                 experiences. With expertise in modern web technologies, I bring
                 ideas to life through code.
               </p>
-              <div className="flex gap-4 justify-center">
+              <div className="flex justify-center gap-4">
                 <Button
                   onClick={() => setActiveSection("projects")}
                   size="lg"
@@ -192,12 +202,12 @@ useEffect(()=>{
 
       case "projects":
         return (
-          <div className="py-20 px-4">
+          <div className="px-4 py-20">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 m-8">
+              <h2 className="m-8 mb-4 text-3xl font-bold text-center md:text-4xl">
                 My Projects
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 text-center mb-8 max-w-2xl mx-auto">
+              <p className="max-w-2xl mx-auto mb-8 text-center text-gray-600 dark:text-gray-300">
                 Here are some of my recent projects that showcase my skills and
                 experience across different disciplines.
               </p>
@@ -226,7 +236,7 @@ useEffect(()=>{
               </div>
 
               {/* Projects Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {filteredProjects.map((project, index) => (
                   <a 
                   key={index}
@@ -234,13 +244,13 @@ useEffect(()=>{
                   target= "_blank">
                   <Card
                     key={index}
-                    className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                    className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                   >
-                    <div className="aspect-video overflow-hidden">
+                    <div className="overflow-hidden aspect-video">
                       <img
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
                       />
                     </div>
                     <CardHeader>
@@ -249,9 +259,9 @@ useEffect(()=>{
                         <Button
                           variant="ghost"
                           size="sm"
-                          className="h-8 w-8 p-0"
+                          className="w-8 h-8 p-0"
                         >
-                          <ExternalLink className="h-4 w-4" />
+                          <ExternalLink className="w-4 h-4" />
                         </Button>
                       </CardTitle>
                       <CardDescription className="text-sm leading-relaxed">
@@ -278,7 +288,7 @@ useEffect(()=>{
 
               {/* No projects message */}
               {filteredProjects.length === 0 && (
-                <div className="text-center py-12">
+                <div className="py-12 text-center">
                   <p className="text-gray-500 dark:text-gray-300">
                     No projects found in this category.
                   </p>
@@ -290,37 +300,37 @@ useEffect(()=>{
 
       case "about":
         return (
-          <div className="py-20 px-4">
+          <div className="px-4 py-20">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 m-8">
+              <h2 className="m-8 mb-12 text-3xl font-bold text-center md:text-4xl">
                 About Me
               </h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
                 <div>
                   <img
                     src="./src/assets/20240814_173945.jpg"
                     alt="About me"
-                    className="w-4xl h-fit rounded-lg shadow-lg"
+                    className="rounded-lg shadow-lg w-4xl h-fit"
                   />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold mb-6">
+                  <h3 className="mb-6 text-2xl font-semibold">
                     Hello! I'm Fahmi Syihaab
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                  <p className="mb-6 leading-relaxed text-gray-600 dark:text-gray-300">
                     I'm a passionate full-stack developer with over 1 years of
                     experience creating digital solutions that make a
                     difference. I love turning complex problems into simple,
                     beautiful, and intuitive designs.
                   </p>
-                  <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                  <p className="mb-8 leading-relaxed text-gray-600 dark:text-gray-300">
                     When I'm not coding, you can find me exploring new
                     technologies, contributing to open-source projects, or
                     enjoying a good cup of coffee while reading about the latest
                     trends in web development and design.
                   </p>
                   <div className="mb-8">
-                    <h4 className="text-lg font-semibold mb-4">
+                    <h4 className="mb-4 text-lg font-semibold">
                       Skills & Technologies
                     </h4>
                     <div className="flex flex-wrap gap-2">
@@ -337,11 +347,11 @@ useEffect(()=>{
                   </div>
                   <div className="flex gap-4">
                     <Button variant="outline" size="sm" onClick={() => window.open("https://github.com/fahmi-blip")}> 
-                      <Github className="h-4 w-6 mr-2"/>
+                      <Github className="w-6 h-4 mr-2"/>
                         GitHub
                     </Button>
                     <Button variant="outline" size="sm" onClick={() => window.open("https://www.linkedin.com/in/fahmi-syihaab-769918323/")}>
-                      <Linkedin className="h-4 w-4 mr-2" />
+                      <Linkedin className="w-4 h-4 mr-2" />
                       LinkedIn
                     </Button>
                   </div>
@@ -353,39 +363,39 @@ useEffect(()=>{
 
       case "contact":
         return (
-          <div className="py-20 px-4">
+          <div className="px-4 py-20">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 m-8">
+              <h2 className="m-8 mb-4 text-3xl font-bold text-center md:text-4xl">
                 Get In Touch
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto">
+              <p className="max-w-2xl mx-auto mb-12 text-center text-gray-600 dark:text-gray-300">
                 I'm always interested in new opportunities and collaborations.
                 Let's discuss how we can work together!
               </p>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
                 <div>
-                  <h3 className="text-xl font-semibold mb-6">
+                  <h3 className="mb-6 text-xl font-semibold">
                     Contact Information
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <Mail className="h-5 w-5 text-black dark:text-zinc-200" />
+                      <Mail className="w-5 h-5 text-black dark:text-zinc-200" />
                       <span>fahmisyhb9@gmail.com</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Github className="h-5 w-5 text-black dark:text-zinc-200" />
+                      <Github className="w-5 h-5 text-black dark:text-zinc-200" />
                       <span>github.com/fahmi-blip</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Linkedin className="h-5 w-5 text-black dark:text-zinc-200" />
+                      <Linkedin className="w-5 h-5 text-black dark:text-zinc-200" />
                       <span>linkedin.com/in/fahmi-syihaab</span>
                     </div>
                   </div>
                   <div className="mt-8">
-                    <h4 className="text-lg font-semibold mb-4">
+                    <h4 className="mb-4 text-lg font-semibold">
                       Let's Connect
                     </h4>
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <p className="leading-relaxed text-gray-600 dark:text-gray-300">
                       Whether you have a project in mind, want to collaborate,
                       or just want to say hello, I'd love to hear from you. Feel
                       free to reach out through any of the channels above or use
@@ -393,7 +403,7 @@ useEffect(()=>{
                     </p>
                   </div>
                 </div>
-                <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-white dark:bg-gray-800">
+                <Card className="overflow-hidden transition-all duration-300 bg-white hover:shadow-lg hover:-translate-y-1 dark:bg-gray-800">
                   <CardHeader>
                     <CardTitle>Send me a message</CardTitle>
                     <CardDescription>
@@ -402,11 +412,11 @@ useEffect(()=>{
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                       <div>
                         <label
                           htmlFor="name"
-                          className="text-sm font-medium mb-2 block"
+                          className="block mb-2 text-sm font-medium"
                         >
                           Name
                         </label>
@@ -415,7 +425,7 @@ useEffect(()=>{
                       <div>
                         <label
                           htmlFor="email"
-                          className="text-sm font-medium mb-2 block"
+                          className="block mb-2 text-sm font-medium"
                         >
                           Email
                         </label>
@@ -429,7 +439,7 @@ useEffect(()=>{
                     <div>
                       <label
                         htmlFor="subject"
-                        className="text-sm font-medium mb-2 block"
+                        className="block mb-2 text-sm font-medium"
                       >
                         Subject
                       </label>
@@ -438,7 +448,7 @@ useEffect(()=>{
                     <div>
                       <label
                         htmlFor="message"
-                        className="text-sm font-medium mb-2 block"
+                        className="block mb-2 text-sm font-medium"
                       >
                         Message
                       </label>
@@ -462,14 +472,14 @@ useEffect(()=>{
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100">
+    <div className="min-h-screen text-gray-900 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 dark:text-gray-100">
       {/* Main Content */}
       <main className="pb-20">{renderContent()}</main>
 
       
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border border-gray-200 dark:border-gray-700 px-12 py-2 rounded-4xl shadow-lg w-fit">
+      <nav className="fixed px-12 py-2 -translate-x-1/2 border border-gray-200 shadow-lg top-4 left-1/2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg dark:border-gray-700 rounded-4xl w-fit">
         <div className="max-w-md mx-auto">
-          <div className="flex justify-around items-center">
+          <div className="flex items-center justify-around">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeSection === item.id;
@@ -498,9 +508,9 @@ useEffect(()=>{
       </nav>
           <button
               onClick={() => setDarkMode(!darkMode)}
-                className="fixed top-4 right-4 p-2 rounded-lg transition-all bg-gray-200 dark:bg-gray-700 text-black dark:text-white shadow-md"
+                className="fixed p-2 text-black transition-all bg-gray-200 rounded-lg shadow-md top-4 right-4 dark:bg-gray-700 dark:text-white"
               >
-              {darkMode ? <Sun className="h-5 w-5"/> : <Moon className="h-5 w-5"/>}
+              {darkMode ? <Sun className="w-5 h-5"/> : <Moon className="w-5 h-5"/>}
           </button>
     </div>
   );
