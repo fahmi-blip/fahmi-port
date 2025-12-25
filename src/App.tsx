@@ -82,7 +82,7 @@ export default function Portfolio() {
       description:
         "Website for managing and selling items.",
       tech: ["MySql", "TypeScript", "React","Express.js"],
-      image: "/src/assets/Screenshot 2025-12-25 215524.png",
+      image: "/Screenshot 2025-12-25 215524.png",
       link: "#",
       category: "web",
     },
@@ -109,7 +109,7 @@ export default function Portfolio() {
       description:
         "Individual project from course assignments.",
       tech: ["Figma", "Prototyping", "User Research"],
-      image: "/src/assets/iPhone 15 Pro.png",
+      image: "/iPhone 15 Pro.png",
       link: "https://www.figma.com/design/dlG0CXnWZeJH1ggSGnyJxZ/Project-UIUX-Prak?node-id=51-14&t=UTsPSfDeoHuCsORm-1",
       category: "uiux",
     },
