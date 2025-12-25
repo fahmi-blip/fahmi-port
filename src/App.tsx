@@ -64,7 +64,7 @@ export default function Portfolio() {
       description:
         "E-commerce solution using html, css, javascript integrated payment",
       tech: ["HTML", "CSS", "JavaScript"],
-      image: "/src/assets/Screenshot 2025-08-17 160031.png",
+      image: "/Screenshot 2025-08-17 160031.png",
       link: "https://fahmi-blip.github.io/e-commerce/",
       category: "web",
     },
@@ -73,7 +73,7 @@ export default function Portfolio() {
       description:
         "Responsive empowerment website with online educational content.",
       tech: ["Webflow", "Figma"],
-      image: "/src/assets/Screenshot 2025-08-16 083122.png",
+      image: "/Screenshot 2025-08-16 083122.png",
       link: "https://equivoice.webflow.io/",
       category: "web",
     },
@@ -86,21 +86,12 @@ export default function Portfolio() {
       link: "#",
       category: "web",
     },
-    // {
-    //   title: "Bookshelf App",
-    //   description:
-    //     "A simple web application to manage book lists digitally with localStorage.",
-    //   tech: ["HTML", "CSS", "JavaScript"],
-    //   image: "/src/assets/image.png",
-    //   link: "https://fahmi-blip.github.io/Bookshelf-App/",
-    //   category: "web",
-    // },
     {
       title: "ResQ: AI-based disaster preparedness",
       description:
         "Project from a national competition that won 3rd place",
       tech: ["Figma", "Prototyping", "User Research"],
-      image: "/src/assets/Screenshot 2025-08-17 161543.png",
+      image: "/Screenshot 2025-08-17 161543.png",
       link: "https://www.figma.com/design/Ui7GPPP9ZH5XLfPFwUooEh/ResQ?node-id=912-66&t=gvV65VOxTb8avhhV-1",
       category: "uiux",
     },
@@ -109,7 +100,7 @@ export default function Portfolio() {
       description:
       "College project about application for ordering food and drinks.",
       tech: ["Figma", "Prototyping", "User Research"],
-      image: "/src/assets/Iphone 16.png",
+      image: "/iPhone 16.png",
       link: "https://www.figma.com/design/pLUo5APZyVOZu6BeQtfal1/Pujasera?node-id=0-1&t=iyPabscMzHugHGA2-1",
       category: "uiux",
     },
@@ -163,7 +154,7 @@ useEffect(()=>{
           <div className="flex flex-col items-center justify-center min-h-screen px-4 text-center ">
             <div className="max-w-4xl mx-auto">
               <img
-                src="./src/assets/20240814_173945.jpg"
+                src="/20240814_173945.jpg"
                 alt="Profile"
                 className="object-cover w-32 h-32 m-8 mx-auto border-4 border-white rounded-full shadow-lg mb-18 scale-180"
               />
@@ -308,7 +299,7 @@ useEffect(()=>{
               <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
                 <div>
                   <img
-                    src="./src/assets/20240814_173945.jpg"
+                    src="/20240814_173945.jpg"
                     alt="About me"
                     className="rounded-lg shadow-lg w-4xl h-fit"
                   />
