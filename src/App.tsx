@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import {
   Home,
@@ -23,488 +21,507 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/Home";
+import ProjectPage from "./pages/Projects";
+import AboutPage from "./pages/About";
+import ContactPage from "./pages/Contact";
 
-export default function Portfolio() {
-  const [activeSection, setActiveSection] = useState("home");
-  const [activeProjectCategory, setActiveProjectCategory] = useState("all");
+// export default function Portfolio() {
+//   const [activeSection, setActiveSection] = useState("home");
+//   const [activeProjectCategory, setActiveProjectCategory] = useState("all");
 
-  const navItems = [
-    { id: "home", label: "Home", icon: Home },
-    { id: "projects", label: "Projects", icon: Briefcase },
-    { id: "about", label: "About", icon: User },
-    { id: "contact", label: "Contact", icon: Mail },
-  ];
+//   const navItems = [
+//     { id: "home", label: "Home", icon: Home },
+//     { id: "projects", label: "Projects", icon: Briefcase },
+//     { id: "about", label: "About", icon: User },
+//     { id: "contact", label: "Contact", icon: Mail },
+//   ];
 
-  const projectCategories = [
-    { id: "all", label: "All Projects" },
-    { id: "web", label: "Web Development" },
-    { id: "uiux", label: "UI/UX Design" },
-    // { id: "graphic", label: "Graphic Design" },
-  ];
+//   const projectCategories = [
+//     { id: "all", label: "All Projects" },
+//     { id: "web", label: "Web Development" },
+//     { id: "uiux", label: "UI/UX Design" },
+//     // { id: "graphic", label: "Graphic Design" },
+//   ];
 
-  const skills = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Python",
-    "Laravel",
-    "Java",
-    "MySql",
-    "Git",
-    "Figma",
-    "Adobe Creative Suite",
-    "UI/UX Design",
-    "Responsive Design",
-    "Canva",
-  ];
+//   const skills = [
+//     "JavaScript",
+//     "TypeScript",
+//     "React",
+//     "Python",
+//     "Laravel",
+//     "Java",
+//     "MySql",
+//     "Git",
+//     "Figma",
+//     "Adobe Creative Suite",
+//     "UI/UX Design",
+//     "Responsive Design",
+//     "Canva",
+//   ];
   
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      description:
-        "E-commerce solution using html, css, javascript integrated payment",
-      tech: ["HTML", "CSS", "JavaScript"],
-      image: "/Screenshot 2025-08-17 160031.png",
-      link: "https://fahmi-blip.github.io/e-commerce/",
-      category: "web",
-    },
-    {
-      title: "Empowerment Website",
-      description:
-        "Responsive empowerment website with online educational content.",
-      tech: ["Webflow", "Figma"],
-      image: "/Screenshot 2025-08-16 083122.png",
-      link: "https://equivoice.webflow.io/",
-      category: "web",
-    },
-    {
-      title: "Admin Dashboard Storage and Sales of goods",
-      description:
-        "Website for managing and selling items.",
-      tech: ["MySql", "TypeScript", "React","Express.js"],
-      image: "/Screenshot 2025-12-25 215524.png",
-      link: "#",
-      category: "web",
-    },
-    {
-      title: "ResQ: AI-based disaster preparedness",
-      description:
-        "Project from a national competition that won 3rd place",
-      tech: ["Figma", "Prototyping", "User Research"],
-      image: "/Screenshot 2025-08-17 161543.png",
-      link: "https://www.figma.com/design/Ui7GPPP9ZH5XLfPFwUooEh/ResQ?node-id=912-66&t=gvV65VOxTb8avhhV-1",
-      category: "uiux",
-    },
-    {
-      title: "Pujasera: Pusat Jajanan Serba Ada application engine based",
-      description:
-      "College project about application for ordering food and drinks.",
-      tech: ["Figma", "Prototyping", "User Research"],
-      image: "/iPhone 16.png",
-      link: "https://www.figma.com/design/pLUo5APZyVOZu6BeQtfal1/Pujasera?node-id=0-1&t=iyPabscMzHugHGA2-1",
-      category: "uiux",
-    },
-    {
-      title: "LUMINA: An AI-Based Digital Solution for Mental Health Management in Indonesian Youth",
-      description:
-        "Individual project from course assignments.",
-      tech: ["Figma", "Prototyping", "User Research"],
-      image: "/iPhone 15 Pro.png",
-      link: "https://www.figma.com/design/dlG0CXnWZeJH1ggSGnyJxZ/Project-UIUX-Prak?node-id=51-14&t=UTsPSfDeoHuCsORm-1",
-      category: "uiux",
-    },
-    // {
-    //   title: "Music Festival Poster",
-    //   description:
-    //     "Eye-catching poster design for annual music festival with vibrant graphics.",
-    //   tech: ["Adobe Photoshop", "Illustrator", "Typography", "Print Design"],
-    //   image: "/music-festival-poster.png",
-    //   link: "#",
-    //   category: "graphic",
-    // }
-  ];
+//   const projects = [
+//     {
+//       title: "E-Commerce Platform",
+//       description:
+//         "E-commerce solution using html, css, javascript integrated payment",
+//       tech: ["HTML", "CSS", "JavaScript"],
+//       image: "/Screenshot 2025-08-17 160031.png",
+//       link: "https://fahmi-blip.github.io/e-commerce/",
+//       category: "web",
+//     },
+//     {
+//       title: "Empowerment Website",
+//       description:
+//         "Responsive empowerment website with online educational content.",
+//       tech: ["Webflow", "Figma"],
+//       image: "/Screenshot 2025-08-16 083122.png",
+//       link: "https://equivoice.webflow.io/",
+//       category: "web",
+//     },
+//     {
+//       title: "Admin Dashboard Storage and Sales of goods",
+//       description:
+//         "Website for managing and selling items.",
+//       tech: ["MySql", "TypeScript", "React","Express.js"],
+//       image: "/Screenshot 2025-12-25 215524.png",
+//       link: "#",
+//       category: "web",
+//     },
+//     {
+//       title: "ResQ: AI-based disaster preparedness",
+//       description:
+//         "Project from a national competition that won 3rd place",
+//       tech: ["Figma", "Prototyping", "User Research"],
+//       image: "/Screenshot 2025-08-17 161543.png",
+//       link: "https://www.figma.com/design/Ui7GPPP9ZH5XLfPFwUooEh/ResQ?node-id=912-66&t=gvV65VOxTb8avhhV-1",
+//       category: "uiux",
+//     },
+//     {
+//       title: "Pujasera: Pusat Jajanan Serba Ada application engine based",
+//       description:
+//       "College project about application for ordering food and drinks.",
+//       tech: ["Figma", "Prototyping", "User Research"],
+//       image: "/iPhone 16.png",
+//       link: "https://www.figma.com/design/pLUo5APZyVOZu6BeQtfal1/Pujasera?node-id=0-1&t=iyPabscMzHugHGA2-1",
+//       category: "uiux",
+//     },
+//     {
+//       title: "LUMINA: An AI-Based Digital Solution for Mental Health Management in Indonesian Youth",
+//       description:
+//         "Individual project from course assignments.",
+//       tech: ["Figma", "Prototyping", "User Research"],
+//       image: "/iPhone 15 Pro.png",
+//       link: "https://www.figma.com/design/dlG0CXnWZeJH1ggSGnyJxZ/Project-UIUX-Prak?node-id=51-14&t=UTsPSfDeoHuCsORm-1",
+//       category: "uiux",
+//     },
+//     // {
+//     //   title: "Music Festival Poster",
+//     //   description:
+//     //     "Eye-catching poster design for annual music festival with vibrant graphics.",
+//     //   tech: ["Adobe Photoshop", "Illustrator", "Typography", "Print Design"],
+//     //   image: "/music-festival-poster.png",
+//     //   link: "#",
+//     //   category: "graphic",
+//     // }
+//   ];
 
-//dark moder
-const [darkMode, setDarkMode] = useState(false);
+// //dark moder
+// const [darkMode, setDarkMode] = useState(false);
 
-useEffect(() => {
-  if (darkMode) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-}, [darkMode]);
+// useEffect(() => {
+//   if (darkMode) {
+//     document.documentElement.classList.add("dark");
+//   } else {
+//     document.documentElement.classList.remove("dark");
+//   }
+// }, [darkMode]);
 
-  const filteredProjects =
-    activeProjectCategory === "all"
-      ? projects
-      : projects.filter(
-          (project) => project.category === activeProjectCategory
-        );
-useEffect(()=>{
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  })
-},[activeSection])
-  const renderContent = () => {
-    switch (activeSection) {
-      case "home":
-        return (
-          <div className="flex flex-col items-center justify-center min-h-screen px-4 text-center ">
-            <div className="max-w-4xl mx-auto">
-              <img
-                src="/20240814_173945.jpg"
-                alt="Profile"
-                className="object-cover w-32 h-32 m-8 mx-auto border-4 border-white rounded-full shadow-lg mb-18 scale-180"
-              />
-              <h1 className="mb-4 text-4xl font-bold md:text-6xl bg-gradient-to-bl">
-                Fahmi Syihaab
-              </h1>
-              <p className="mb-8 text-xl text-gray-600 md:text-2xl dark:text-gray-300">
-                Full Stack Developer & UI/UX Designer
-              </p>
-              <p className="max-w-2xl mx-auto mb-12 text-lg leading-relaxed text-gray-500 dark:text-gray-300">
-                I create beautiful, functional, and user-centered digital
-                experiences. With expertise in modern web technologies, I bring
-                ideas to life through code.
-              </p>
-              <div className="flex justify-center gap-4">
-                <Button
-                  onClick={() => setActiveSection("projects")}
-                  size="lg"
-                  className="to-black"
-                >
-                  View My Projects
-                </Button>
-                {/* <Button variant="outline" size="lg"
-                onClick={() => {
-                  const link = document.createElement("a")
-                  link.href = "/CV.pdf"
-                  link.download = "CV.pdf" 
-                  link.click()}}
-                >
-                  Download CV
-                </Button> */}
-              </div>
-            </div>
-          </div>
-        );
+//   const filteredProjects =
+//     activeProjectCategory === "all"
+//       ? projects
+//       : projects.filter(
+//           (project) => project.category === activeProjectCategory
+//         );
+// useEffect(()=>{
+//   window.scrollTo({
+//     top: 0,
+//     behavior: "smooth",
+//   })
+// },[activeSection])
+//   const renderContent = () => {
+//     switch (activeSection) {
+//       case "home":
+//         return (
+//           <div className="flex flex-col items-center justify-center min-h-screen px-4 text-center ">
+//             <div className="max-w-4xl mx-auto">
+//               <img
+//                 src="/20240814_173945.jpg"
+//                 alt="Profile"
+//                 className="object-cover w-32 h-32 m-8 mx-auto border-4 border-white rounded-full shadow-lg mb-18 scale-180"
+//               />
+//               <h1 className="mb-4 text-4xl font-bold md:text-6xl bg-gradient-to-bl">
+//                 Fahmi Syihaab
+//               </h1>
+//               <p className="mb-8 text-xl text-gray-600 md:text-2xl dark:text-gray-300">
+//                 Full Stack Developer & UI/UX Designer
+//               </p>
+//               <p className="max-w-2xl mx-auto mb-12 text-lg leading-relaxed text-gray-500 dark:text-gray-300">
+//                 I create beautiful, functional, and user-centered digital
+//                 experiences. With expertise in modern web technologies, I bring
+//                 ideas to life through code.
+//               </p>
+//               <div className="flex justify-center gap-4">
+//                 <Button
+//                   onClick={() => setActiveSection("projects")}
+//                   size="lg"
+//                   className="to-black"
+//                 >
+//                   View My Projects
+//                 </Button>
+//                 {/* <Button variant="outline" size="lg"
+//                 onClick={() => {
+//                   const link = document.createElement("a")
+//                   link.href = "/CV.pdf"
+//                   link.download = "CV.pdf" 
+//                   link.click()}}
+//                 >
+//                   Download CV
+//                 </Button> */}
+//               </div>
+//             </div>
+//           </div>
+//         );
 
-      case "projects":
-        return (
-          <div className="px-4 py-20">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="m-8 mb-4 text-3xl font-bold text-center md:text-4xl">
-                My Projects
-              </h2>
-              <p className="max-w-2xl mx-auto mb-8 text-center text-gray-600 dark:text-gray-300">
-                Here are some of my recent projects that showcase my skills and
-                experience across different disciplines.
-              </p>
+//       case "projects":
+//         return (
+//           <div className="px-4 py-20">
+//             <div className="max-w-6xl mx-auto">
+//               <h2 className="m-8 mb-4 text-3xl font-bold text-center md:text-4xl">
+//                 My Projects
+//               </h2>
+//               <p className="max-w-2xl mx-auto mb-8 text-center text-gray-600 dark:text-gray-300">
+//                 Here are some of my recent projects that showcase my skills and
+//                 experience across different disciplines.
+//               </p>
 
-              {/* Project Category Filter */}
-              <div className="flex flex-wrap justify-center gap-2 mb-12">
-                {projectCategories.map((category) => (
-                  <Button
-                    key={category.id}
-                    variant={
-                      activeProjectCategory === category.id
-                        ? "default"
-                        : "outline"
-                    }
-                    size="sm"
-                    onClick={() => setActiveProjectCategory(category.id)}
-                    className={`transition-all ${
-                      activeProjectCategory === category.id
-                        ? "to-black"
-                        : "hover:bg-gray-50"
-                    }`}
-                  >
-                    {category.label}
-                  </Button>
-                ))}
-              </div>
+//               {/* Project Category Filter */}
+//               <div className="flex flex-wrap justify-center gap-2 mb-12">
+//                 {projectCategories.map((category) => (
+//                   <Button
+//                     key={category.id}
+//                     variant={
+//                       activeProjectCategory === category.id
+//                         ? "default"
+//                         : "outline"
+//                     }
+//                     size="sm"
+//                     onClick={() => setActiveProjectCategory(category.id)}
+//                     className={`transition-all ${
+//                       activeProjectCategory === category.id
+//                         ? "to-black"
+//                         : "hover:bg-gray-50"
+//                     }`}
+//                   >
+//                     {category.label}
+//                   </Button>
+//                 ))}
+//               </div>
 
-              {/* Projects Grid */}
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {filteredProjects.map((project, index) => (
-                  <a 
-                  key={index}
-                  href={project.link}
-                  target= "_blank">
-                  <Card
-                    key={index}
-                    className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                  >
-                    <div className="overflow-hidden aspect-video">
-                      <img
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
-                      />
-                    </div>
-                    <CardHeader>
-                      <CardTitle className="flex items-center justify-between">
-                        <span className="text-lg">{project.title}</span>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="w-8 h-8 p-0"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                        </Button>
-                      </CardTitle>
-                      <CardDescription className="text-sm leading-relaxed">
-                        {project.description}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex flex-wrap gap-1">
-                        {project.tech.map((tech, techIndex) => (
-                          <Badge
-                            key={techIndex}
-                            variant="secondary"
-                            className="text-xs"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                  </a>
-                ))}
-              </div>
+//               {/* Projects Grid */}
+//               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+//                 {filteredProjects.map((project, index) => (
+//                   <a 
+//                   key={index}
+//                   href={project.link}
+//                   target= "_blank">
+//                   <Card
+//                     key={index}
+//                     className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+//                   >
+//                     <div className="overflow-hidden aspect-video">
+//                       <img
+//                         src={project.image || "/placeholder.svg"}
+//                         alt={project.title}
+//                         className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+//                       />
+//                     </div>
+//                     <CardHeader>
+//                       <CardTitle className="flex items-center justify-between">
+//                         <span className="text-lg">{project.title}</span>
+//                         <Button
+//                           variant="ghost"
+//                           size="sm"
+//                           className="w-8 h-8 p-0"
+//                         >
+//                           <ExternalLink className="w-4 h-4" />
+//                         </Button>
+//                       </CardTitle>
+//                       <CardDescription className="text-sm leading-relaxed">
+//                         {project.description}
+//                       </CardDescription>
+//                     </CardHeader>
+//                     <CardContent>
+//                       <div className="flex flex-wrap gap-1">
+//                         {project.tech.map((tech, techIndex) => (
+//                           <Badge
+//                             key={techIndex}
+//                             variant="secondary"
+//                             className="text-xs"
+//                           >
+//                             {tech}
+//                           </Badge>
+//                         ))}
+//                       </div>
+//                     </CardContent>
+//                   </Card>
+//                   </a>
+//                 ))}
+//               </div>
 
-              {/* No projects message */}
-              {filteredProjects.length === 0 && (
-                <div className="py-12 text-center">
-                  <p className="text-gray-500 dark:text-gray-300">
-                    No projects found in this category.
-                  </p>
-                </div>
-              )}
-            </div>
-          </div>
-        );
+//               {/* No projects message */}
+//               {filteredProjects.length === 0 && (
+//                 <div className="py-12 text-center">
+//                   <p className="text-gray-500 dark:text-gray-300">
+//                     No projects found in this category.
+//                   </p>
+//                 </div>
+//               )}
+//             </div>
+//           </div>
+//         );
 
-      case "about":
-        return (
-          <div className="px-4 py-20">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="m-8 mb-12 text-3xl font-bold text-center md:text-4xl">
-                About Me
-              </h2>
-              <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-                <div>
-                  <img
-                    src="/20240814_173945.jpg"
-                    alt="About me"
-                    className="rounded-lg shadow-lg w-4xl h-fit"
-                  />
-                </div>
-                <div>
-                  <h3 className="mb-6 text-2xl font-semibold">
-                    Hello! I'm Fahmi Syihaab
-                  </h3>
-                  <p className="mb-6 leading-relaxed text-gray-600 dark:text-gray-300">
-                    I'm a passionate full-stack developer with over 1 years of
-                    experience creating digital solutions that make a
-                    difference. I love turning complex problems into simple,
-                    beautiful, and intuitive designs.
-                  </p>
-                  <p className="mb-8 leading-relaxed text-gray-600 dark:text-gray-300">
-                    When I'm not coding, you can find me exploring new
-                    technologies, contributing to open-source projects, or
-                    enjoying a good cup of coffee while reading about the latest
-                    trends in web development and design.
-                  </p>
-                  <div className="mb-8">
-                    <h4 className="mb-4 text-lg font-semibold">
-                      Skills & Technologies
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {skills.map((skill, index) => (
-                        <Badge
-                          key={index}
-                          variant="outline"
-                          className="text-sm"
-                        >
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <Button variant="outline" size="sm" onClick={() => window.open("https://github.com/fahmi-blip")}> 
-                      <Github className="w-6 h-4 mr-2"/>
-                        GitHub
-                    </Button>
-                    <Button variant="outline" size="sm" onClick={() => window.open("https://www.linkedin.com/in/fahmi-syihaab-769918323/")}>
-                      <Linkedin className="w-4 h-4 mr-2" />
-                      LinkedIn
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
+//       case "about":
+//         return (
+//           <div className="px-4 py-20">
+//             <div className="max-w-4xl mx-auto">
+//               <h2 className="m-8 mb-12 text-3xl font-bold text-center md:text-4xl">
+//                 About Me
+//               </h2>
+//               <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+//                 <div>
+//                   <img
+//                     src="/20240814_173945.jpg"
+//                     alt="About me"
+//                     className="rounded-lg shadow-lg w-4xl h-fit"
+//                   />
+//                 </div>
+//                 <div>
+//                   <h3 className="mb-6 text-2xl font-semibold">
+//                     Hello! I'm Fahmi Syihaab
+//                   </h3>
+//                   <p className="mb-6 leading-relaxed text-gray-600 dark:text-gray-300">
+//                     I'm a passionate full-stack developer with over 1 years of
+//                     experience creating digital solutions that make a
+//                     difference. I love turning complex problems into simple,
+//                     beautiful, and intuitive designs.
+//                   </p>
+//                   <p className="mb-8 leading-relaxed text-gray-600 dark:text-gray-300">
+//                     When I'm not coding, you can find me exploring new
+//                     technologies, contributing to open-source projects, or
+//                     enjoying a good cup of coffee while reading about the latest
+//                     trends in web development and design.
+//                   </p>
+//                   <div className="mb-8">
+//                     <h4 className="mb-4 text-lg font-semibold">
+//                       Skills & Technologies
+//                     </h4>
+//                     <div className="flex flex-wrap gap-2">
+//                       {skills.map((skill, index) => (
+//                         <Badge
+//                           key={index}
+//                           variant="outline"
+//                           className="text-sm"
+//                         >
+//                           {skill}
+//                         </Badge>
+//                       ))}
+//                     </div>
+//                   </div>
+//                   <div className="flex gap-4">
+//                     <Button variant="outline" size="sm" onClick={() => window.open("https://github.com/fahmi-blip")}> 
+//                       <Github className="w-6 h-4 mr-2"/>
+//                         GitHub
+//                     </Button>
+//                     <Button variant="outline" size="sm" onClick={() => window.open("https://www.linkedin.com/in/fahmi-syihaab-769918323/")}>
+//                       <Linkedin className="w-4 h-4 mr-2" />
+//                       LinkedIn
+//                     </Button>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         );
 
-      case "contact":
-        return (
-          <div className="px-4 py-20">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="m-8 mb-4 text-3xl font-bold text-center md:text-4xl">
-                Get In Touch
-              </h2>
-              <p className="max-w-2xl mx-auto mb-12 text-center text-gray-600 dark:text-gray-300">
-                I'm always interested in new opportunities and collaborations.
-                Let's discuss how we can work together!
-              </p>
-              <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-                <div>
-                  <h3 className="mb-6 text-xl font-semibold">
-                    Contact Information
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <Mail className="w-5 h-5 text-black dark:text-zinc-200" />
-                      <span>fahmisyhb9@gmail.com</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Github className="w-5 h-5 text-black dark:text-zinc-200" />
-                      <span>github.com/fahmi-blip</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Linkedin className="w-5 h-5 text-black dark:text-zinc-200" />
-                      <span>linkedin.com/in/fahmi-syihaab</span>
-                    </div>
-                  </div>
-                  <div className="mt-8">
-                    <h4 className="mb-4 text-lg font-semibold">
-                      Let's Connect
-                    </h4>
-                    <p className="leading-relaxed text-gray-600 dark:text-gray-300">
-                      Whether you have a project in mind, want to collaborate,
-                      or just want to say hello, I'd love to hear from you. Feel
-                      free to reach out through any of the channels above or use
-                      the contact form.
-                    </p>
-                  </div>
-                </div>
-                <Card className="overflow-hidden transition-all duration-300 bg-white hover:shadow-lg hover:-translate-y-1 dark:bg-gray-800">
-                  <CardHeader>
-                    <CardTitle>Send me a message</CardTitle>
-                    <CardDescription>
-                      Fill out the form below and I'll get back to you as soon
-                      as possible.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                      <div>
-                        <label
-                          htmlFor="name"
-                          className="block mb-2 text-sm font-medium"
-                        >
-                          Name
-                        </label>
-                        <Input id="name" placeholder="Your name" />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="email"
-                          className="block mb-2 text-sm font-medium"
-                        >
-                          Email
-                        </label>
-                        <Input
-                          id="email"
-                          type="email"
-                          placeholder="your@email.com"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="subject"
-                        className="block mb-2 text-sm font-medium"
-                      >
-                        Subject
-                      </label>
-                      <Input id="subject" placeholder="What's this about?" />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="block mb-2 text-sm font-medium"
-                      >
-                        Message
-                      </label>
-                      <Textarea
-                        id="message"
-                        placeholder="Tell me about your project or just say hello!"
-                        rows={5}
-                      />
-                    </div>
-                    <Button className="w-full to-black">Send Message</Button>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        );
+//       case "contact":
+//         return (
+//           <div className="px-4 py-20">
+//             <div className="max-w-4xl mx-auto">
+//               <h2 className="m-8 mb-4 text-3xl font-bold text-center md:text-4xl">
+//                 Get In Touch
+//               </h2>
+//               <p className="max-w-2xl mx-auto mb-12 text-center text-gray-600 dark:text-gray-300">
+//                 I'm always interested in new opportunities and collaborations.
+//                 Let's discuss how we can work together!
+//               </p>
+//               <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+//                 <div>
+//                   <h3 className="mb-6 text-xl font-semibold">
+//                     Contact Information
+//                   </h3>
+//                   <div className="space-y-4">
+//                     <div className="flex items-center gap-3">
+//                       <Mail className="w-5 h-5 text-black dark:text-zinc-200" />
+//                       <span>fahmisyhb9@gmail.com</span>
+//                     </div>
+//                     <div className="flex items-center gap-3">
+//                       <Github className="w-5 h-5 text-black dark:text-zinc-200" />
+//                       <span>github.com/fahmi-blip</span>
+//                     </div>
+//                     <div className="flex items-center gap-3">
+//                       <Linkedin className="w-5 h-5 text-black dark:text-zinc-200" />
+//                       <span>linkedin.com/in/fahmi-syihaab</span>
+//                     </div>
+//                   </div>
+//                   <div className="mt-8">
+//                     <h4 className="mb-4 text-lg font-semibold">
+//                       Let's Connect
+//                     </h4>
+//                     <p className="leading-relaxed text-gray-600 dark:text-gray-300">
+//                       Whether you have a project in mind, want to collaborate,
+//                       or just want to say hello, I'd love to hear from you. Feel
+//                       free to reach out through any of the channels above or use
+//                       the contact form.
+//                     </p>
+//                   </div>
+//                 </div>
+//                 <Card className="overflow-hidden transition-all duration-300 bg-white hover:shadow-lg hover:-translate-y-1 dark:bg-gray-800">
+//                   <CardHeader>
+//                     <CardTitle>Send me a message</CardTitle>
+//                     <CardDescription>
+//                       Fill out the form below and I'll get back to you as soon
+//                       as possible.
+//                     </CardDescription>
+//                   </CardHeader>
+//                   <CardContent className="space-y-4">
+//                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+//                       <div>
+//                         <label
+//                           htmlFor="name"
+//                           className="block mb-2 text-sm font-medium"
+//                         >
+//                           Name
+//                         </label>
+//                         <Input id="name" placeholder="Your name" />
+//                       </div>
+//                       <div>
+//                         <label
+//                           htmlFor="email"
+//                           className="block mb-2 text-sm font-medium"
+//                         >
+//                           Email
+//                         </label>
+//                         <Input
+//                           id="email"
+//                           type="email"
+//                           placeholder="your@email.com"
+//                         />
+//                       </div>
+//                     </div>
+//                     <div>
+//                       <label
+//                         htmlFor="subject"
+//                         className="block mb-2 text-sm font-medium"
+//                       >
+//                         Subject
+//                       </label>
+//                       <Input id="subject" placeholder="What's this about?" />
+//                     </div>
+//                     <div>
+//                       <label
+//                         htmlFor="message"
+//                         className="block mb-2 text-sm font-medium"
+//                       >
+//                         Message
+//                       </label>
+//                       <Textarea
+//                         id="message"
+//                         placeholder="Tell me about your project or just say hello!"
+//                         rows={5}
+//                       />
+//                     </div>
+//                     <Button className="w-full to-black">Send Message</Button>
+//                   </CardContent>
+//                 </Card>
+//               </div>
+//             </div>
+//           </div>
+//         );
 
-      default:
-        return null;
-    }
-  };
+//       default:
+//         return null;
+//     }
+//   };
 
-  return (
-    <div className="min-h-screen text-gray-900 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 dark:text-gray-100">
-      {/* Main Content */}
-      <main className="pb-20">{renderContent()}</main>
+//   return (
+//     <div className="min-h-screen text-gray-900 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 dark:text-gray-100">
+//       {/* Main Content */}
+//       <main className="pb-20">{renderContent()}</main>
 
       
-      <nav className="fixed px-12 py-2 -translate-x-1/2 border border-gray-200 shadow-lg top-4 left-1/2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg dark:border-gray-700 rounded-4xl w-fit">
-        <div className="max-w-md mx-auto">
-          <div className="flex items-center justify-around">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              const isActive = activeSection === item.id;
-              return (
-                <button
-                key={item.id}
-                onClick={() => setActiveSection(item.id)}
-                className={`flex flex-col items-center gap-1 px-3 py-2 rounded-lg transition-all ${
-                  isActive
-                    ? "text-black dark:text-white bg-gray-100 dark:bg-gray-800"
-                    : "text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700"
-                }`}
-              >
-                  <Icon
-                    className={`h-5 w-5 ${
-                      isActive ? "scale-110" : ""
-                    } transition-transform`}
-                  />
-                  <span className="text-xs font-medium">{item.label}</span>
-                </button>
+//       <nav className="fixed px-12 py-2 -translate-x-1/2 border border-gray-200 shadow-lg top-4 left-1/2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg dark:border-gray-700 rounded-4xl w-fit">
+//         <div className="max-w-md mx-auto">
+//           <div className="flex items-center justify-around">
+//             {navItems.map((item) => {
+//               const Icon = item.icon;
+//               const isActive = activeSection === item.id;
+//               return (
+//                 <button
+//                 key={item.id}
+//                 onClick={() => setActiveSection(item.id)}
+//                 className={`flex flex-col items-center gap-1 px-3 py-2 rounded-lg transition-all ${
+//                   isActive
+//                     ? "text-black dark:text-white bg-gray-100 dark:bg-gray-800"
+//                     : "text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700"
+//                 }`}
+//               >
+//                   <Icon
+//                     className={`h-5 w-5 ${
+//                       isActive ? "scale-110" : ""
+//                     } transition-transform`}
+//                   />
+//                   <span className="text-xs font-medium">{item.label}</span>
+//                 </button>
                 
-              );
-            })}
-          </div>
-        </div>
-      </nav>
-          <button
-              onClick={() => setDarkMode(!darkMode)}
-                className="fixed p-2 text-black transition-all bg-gray-200 rounded-lg shadow-md top-4 right-4 dark:bg-gray-700 dark:text-white"
-              >
-              {darkMode ? <Sun className="w-5 h-5"/> : <Moon className="w-5 h-5"/>}
-          </button>
-    </div>
-  );
-}
+//               );
+//             })}
+//           </div>
+//         </div>
+//       </nav>
+//           <button
+//               onClick={() => setDarkMode(!darkMode)}
+//                 className="fixed p-3 text-black transition-all bg-gray-200 rounded-lg shadow-md bottom-8 right-4 dark:bg-gray-700 dark:text-white"
+//               >
+//               {darkMode ? <Sun className="w-5 h-5"/> : <Moon className="w-5 h-5"/>}
+//           </button>
+//     </div>
+//   );
+// }
 
+export default function App(){
+  return (
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/project" element={<ProjectPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </Router>
+    </>
+  )
+}
 
