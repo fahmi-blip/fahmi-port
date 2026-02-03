@@ -4,6 +4,7 @@ import ProjectPage from "./pages/Projects";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import { Navbar } from "./components/ui/navbar";
+import { ParticlesBackground } from "./components/ui/background";
 
 // export default function Portfolio() {
 //   const [activeSection, setActiveSection] = useState("home");
@@ -492,6 +493,9 @@ export default function App(){
   return (
     <>
       <Router>
+      <ParticlesBackground />
+      
+      <div className="relative z-10">
         <Navbar />
         <main>
         <Routes>
@@ -501,6 +505,7 @@ export default function App(){
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
         </main>
+        </div>
       </Router>
     </>
   )

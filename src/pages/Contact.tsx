@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import {
   Home,
   User,
@@ -20,8 +19,6 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function ContactPage() {
     
@@ -66,6 +63,8 @@ return (
                     </p>
                   </div>
                 </div>
+                
+                <form action="https://formsubmit.co/combyn559@gmail.com" method="POST">
                 <Card className="overflow-hidden transition-all duration-300 bg-white hover:shadow-lg hover:-translate-y-1 dark:bg-gray-800">
                   <CardHeader>
                     <CardTitle>Send me a message</CardTitle>
@@ -124,6 +123,7 @@ return (
                     <Button className="w-full to-black">Send Message</Button>
                   </CardContent>
                 </Card>
+                </form>
               </div>
             </div>
           </div>

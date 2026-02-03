@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-
+import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 
 export default function HomePage() {
       const [activeSection, setActiveSection] = useState("home");
+      const navigate =useNavigate();
 
 return (
           <div className="flex flex-col items-center justify-center min-h-screen px-4 text-center ">
@@ -27,21 +28,22 @@ return (
               </p>
               <div className="flex justify-center gap-4">
                 <Button
-                  onClick={() => setActiveSection("projects")}
+                  onClick={() => navigate("/project")}
                   size="lg"
                   className="to-black"
                 >
                   View My Projects
                 </Button>
-                {/* <Button variant="outline" size="lg"
+                <Button variant="outline" size="lg"
+                
                 onClick={() => {
                   const link = document.createElement("a")
-                  link.href = "/CV.pdf"
-                  link.download = "CV.pdf" 
+                  link.href = "/Fahmi-Syihaab-CV.pdf"
+                  link.download = "Fahmi-Syihaab-CV.pdf" 
                   link.click()}}
                 >
                   Download CV
-                </Button> */}
+                </Button>
               </div>
             </div>
           </div>

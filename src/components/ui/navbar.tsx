@@ -29,7 +29,7 @@ useEffect(() => {
 
 return (
   <>
-      <nav className="fixed z-50 px-12 py-2 -translate-x-1/2 border border-gray-200 shadow-lg  top-4 left-1/2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg dark:border-gray-700 rounded-4xl w-fit">
+      <nav className="fixed z-50 px-12 py-2 -translate-x-1/2 border border-gray-200 shadow-lg top-4 left-1/2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg dark:border-gray-700 rounded-4xl w-fit">
         <div className="max-w-md mx-auto">
           <div className="flex items-center justify-around">
             {navItems.map((item) => {

@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  @keyframes move-grid {
+    from { background-position: 0 0; }
+    to { background-position: 30px 30px; }
+  }
+
+  .animate-grid {
+    animation: move-grid 3s linear infinite;
+  }
+}
