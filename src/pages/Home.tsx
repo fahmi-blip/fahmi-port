@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+// import { useEffect, useState } from "react";
+import { useNavigate} from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 
 export default function HomePage() {
-      const [activeSection, setActiveSection] = useState("home");
       const navigate =useNavigate();
 
 return (
