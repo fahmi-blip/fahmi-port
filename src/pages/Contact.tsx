@@ -1,13 +1,7 @@
 import {
-  Home,
-  User,
-  Briefcase,
   Mail,
   Github,
   Linkedin,
-  ExternalLink,
-  Sun,
-  Moon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
