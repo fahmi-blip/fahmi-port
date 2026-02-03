@@ -76,7 +76,7 @@ return (
                         >
                           Name
                         </label>
-                        <Input id="name" placeholder="Your name" />
+                        <Input id="name" name="name" placeholder="Your name" />
                       </div>
                       <div>
                         <label
@@ -89,6 +89,7 @@ return (
                           id="email"
                           type="email"
                           placeholder="your@email.com"
+                          name="email"
                         />
                       </div>
                     </div>
@@ -99,7 +100,7 @@ return (
                       >
                         Subject
                       </label>
-                      <Input id="subject" placeholder="What's this about?" />
+                      <Input id="subject" name="subject" placeholder="What's this about?" />
                     </div>
                     <div>
                       <label
@@ -112,9 +113,10 @@ return (
                         id="message"
                         placeholder="Tell me about your project or just say hello!"
                         rows={5}
+                        name="message"
                       />
                     </div>
-                    <Button className="w-full to-black">Send Message</Button>
+                    <Button type="submit" className="w-full to-black">Send Message</Button>
                   </CardContent>
                 </Card>
                 </form>
