@@ -18,10 +18,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function ProjectPage() {
      const [activeProjectCategory, setActiveProjectCategory] = useState("all");
@@ -94,7 +91,7 @@ const projects = [
       : projects.filter(
           (project) => project.category === activeProjectCategory
         );
-        useEffect(()=>{
+    useEffect(()=>{
     window.scrollTo({
       top: 0,
       behavior: "smooth",

@@ -1,31 +1,9 @@
-import { useEffect, useState } from "react";
-import {
-  Home,
-  User,
-  Briefcase,
-  Mail,
-  Github,
-  Linkedin,
-  ExternalLink,
-  Sun,
-  Moon,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/Home";
 import ProjectPage from "./pages/Projects";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
+import { Navbar } from "./components/ui/navbar";
 
 // export default function Portfolio() {
 //   const [activeSection, setActiveSection] = useState("home");
@@ -514,12 +492,15 @@ export default function App(){
   return (
     <>
       <Router>
+        <Navbar />
+        <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/project" element={<ProjectPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
+        </main>
       </Router>
     </>
   )
