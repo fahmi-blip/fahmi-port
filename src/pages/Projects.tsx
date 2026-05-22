@@ -27,7 +27,7 @@ const projects = [
       description:
         "E-Commerce platform for Fashion and Beauty products.",
       tech: ["Webflow", "TypeScript", "React"],
-      image: "Screenshot 2026-05-22 130752.png",
+      image: "../../Screenshot 2026-05-22 130752.png",
       link: "https://vera-184e51.webflow.io/",
       category: "web",
     },
@@ -36,7 +36,7 @@ const projects = [
       description:
         "Responsive empowerment website with online educational content.",
       tech: ["Webflow"],
-      image: "Screenshot 2025-08-16 083122.png",
+      image: "../../Screenshot 2025-08-16 083122.png",
       link: "https://equivoice.webflow.io/",
       category: "web",
     },
@@ -45,7 +45,7 @@ const projects = [
       description:
         "Website for managing and selling items.",
       tech: ["MySql", "TypeScript", "React","Express.js"],
-      image: "Screenshot 2025-12-25 215524.png",
+      image: "../../Screenshot 2025-12-25 215524.png",
       link: "https://github.com/fahmi-blip/data_barang.git",
       category: "web",
     },
@@ -54,7 +54,7 @@ const projects = [
       description:
         "A property agency website with a modern and user-friendly design.",
       tech: ["Wordpress"],
-      image: "Screenshot 2026-05-22 131730.png",
+      image: "../../Screenshot 2026-05-22 131730.png",
       link: "https://fahmi498.wordpress.com/",
       category: "web",
     },
@@ -63,7 +63,7 @@ const projects = [
       description:
       "A landing page for a trip planning service, designed to attract and convert visitors.",
       tech: ["HTML", "CSS", "JavaScript"],
-      image: "Screenshot 2026-05-22 140413.png",
+      image: "../../Screenshot 2026-05-22 140413.png",
       link: "https://fahmi-blip.github.io/landing-page-trip/",
       category: "web",
     },
@@ -72,7 +72,7 @@ const projects = [
       description:
       "A fast, responsive, and comprehensive API-based film exploration website.",
       tech: ["HTML","CSS", "JavaScript"],
-      image: "Screenshot 2026-05-22 135134.png",
+      image: "../../Screenshot 2026-05-22 135134.png",
       link: "https://fahmi-blip.github.io/Website-Film-API/",
       category: "web",
     },
@@ -81,7 +81,7 @@ const projects = [
       description:
         "Integrated animal hospital system with dedicated dashboard for admin, doctors, nurses, receptionists and pet owners.",
       tech: ["MySql", "Laravel"],
-      image: "Screenshot 2026-05-22 141322.png",
+      image: "../../Screenshot 2026-05-22 141322.png",
       link: "https://github.com/fahmi-blip/rshp-breeze.git",
       category: "web",
     },
@@ -99,7 +99,7 @@ const projects = [
       description:
       "Individual project from course assignments.",
       tech: ["Figma", "Prototyping", "User Research"],
-      image: "iPhone 15 Pro.png",
+      image: "../../iPhone 15 Pro.png",
       link: "https://www.figma.com/design/dlG0CXnWZeJH1ggSGnyJxZ/Project-UIUX-Prak?node-id=51-14&t=UTsPSfDeoHuCsORm-1",
       category: "uiux",
     },
@@ -108,7 +108,7 @@ const projects = [
       description:
         "Project from a national competition that won 3rd Place",
       tech: ["Figma", "Prototyping", "User Research"],
-      image: "Screenshot 2025-08-17 161543.png",
+      image: "../../Screenshot 2025-08-17 161543.png",
       link: "https://www.figma.com/design/Ui7GPPP9ZH5XLfPFwUooEh/ResQ?node-id=912-66&t=gvV65VOxTb8avhhV-1",
       category: "uiux",
     },
