@@ -38,7 +38,7 @@ export default function AboutPage() {
             
             <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
               <p>
-                I'm a  <span className="font-medium text-foreground">Full Stack Developer</span> and 
+                I'm a  <span className="font-medium text-foreground">Website Developer</span> and 
                 <span className="font-medium text-foreground"> UI/UX Designer</span> focused on creating meaningful digital solutions. I'm passionate about 
                 transforming complex problems into simple and intuitive designs.
               </p>
