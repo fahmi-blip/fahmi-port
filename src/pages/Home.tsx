@@ -18,7 +18,7 @@ return (
                 Fahmi Syihaab
               </h1>
               <p className="mb-8 text-xl text-gray-600 md:text-2xl dark:text-gray-300">
-                Full Stack Developer & UI/UX Designer
+                Website Developer & UI/UX Designer
               </p>
               <p className="max-w-2xl mx-auto mb-12 text-lg leading-relaxed text-gray-500 dark:text-gray-300">
                 I create beautiful, functional, and user-centered digital
@@ -33,7 +33,7 @@ return (
                 >
                   View My Projects
                 </Button>
-                <Button variant="outline" size="lg"
+                {/* <Button variant="outline" size="lg"
                 
                 onClick={() => {
                   const link = document.createElement("a")
@@ -42,7 +42,7 @@ return (
                   link.click()}}
                 >
                   Download CV
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>

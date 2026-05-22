@@ -23,19 +23,19 @@ export default function ProjectPage() {
   ];
 const projects = [
     {
-      title: "E-Commerce Platform",
+    title: "E-Commerce Platform (Ongoing)",
       description:
-        "E-commerce solution using html, css, javascript integrated payment",
-      tech: ["HTML", "CSS", "JavaScript"],
-      image: "/Screenshot 2025-08-17 160031.png",
-      link: "https://fahmi-blip.github.io/e-commerce/",
+        "E-Commerce platform for Fashion and Beauty products.",
+      tech: ["Webflow", "TypeScript", "React"],
+      image: "/Screenshot 2026-05-22 130752.png",
+      link: "https://vera-184e51.webflow.io/",
       category: "web",
     },
     {
       title: "Empowerment Website",
       description:
         "Responsive empowerment website with online educational content.",
-      tech: ["Webflow", "Figma"],
+      tech: ["Webflow"],
       image: "/Screenshot 2025-08-16 083122.png",
       link: "https://equivoice.webflow.io/",
       category: "web",
@@ -46,42 +46,78 @@ const projects = [
         "Website for managing and selling items.",
       tech: ["MySql", "TypeScript", "React","Express.js"],
       image: "/Screenshot 2025-12-25 215524.png",
-      link: "#",
+      link: "https://github.com/fahmi-blip/data_barang.git",
       category: "web",
     },
     {
-      title: "ResQ: AI-based disaster preparedness",
+      title: "Agency Property Website",
       description:
-        "Project from a national competition that won 3rd place",
-      tech: ["Figma", "Prototyping", "User Research"],
-      image: "/Screenshot 2025-08-17 161543.png",
-      link: "https://www.figma.com/design/Ui7GPPP9ZH5XLfPFwUooEh/ResQ?node-id=912-66&t=gvV65VOxTb8avhhV-1",
-      category: "uiux",
+        "A property agency website with a modern and user-friendly design.",
+      tech: ["Wordpress"],
+      image: "/Screenshot 2026-05-22 131730.png",
+      link: "https://fahmi498.wordpress.com/",
+      category: "web",
     },
     {
-      title: "Pujasera: Pusat Jajanan Serba Ada application engine based",
+      title: "Landing Page Trip Planning",
       description:
-      "College project about application for ordering food and drinks.",
-      tech: ["Figma", "Prototyping", "User Research"],
-      image: "/iPhone 16.png",
-      link: "https://www.figma.com/design/pLUo5APZyVOZu6BeQtfal1/Pujasera?node-id=0-1&t=iyPabscMzHugHGA2-1",
-      category: "uiux",
+      "A landing page for a trip planning service, designed to attract and convert visitors.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      image: "Screenshot 2026-05-22 140413.png",
+      link: "https://fahmi-blip.github.io/landing-page-trip/",
+      category: "web",
     },
+    {
+      title: "Website Movie Explorer",
+      description:
+      "A fast, responsive, and comprehensive API-based film exploration website.",
+      tech: ["HTML","CSS", "JavaScript"],
+      image: "/Screenshot 2026-05-22 135134.png",
+      link: "https://fahmi-blip.github.io/Website-Film-API/",
+      category: "web",
+    },
+    {
+      title: "Animal Hospital Management System",
+      description:
+        "Integrated animal hospital system with dedicated dashboard for admin, doctors, nurses, receptionists and pet owners.",
+      tech: ["MySql", "Laravel"],
+      image: "/Screenshot 2026-05-22 141322.png",
+      link: "https://github.com/fahmi-blip/rshp-breeze.git",
+      category: "web",
+    },
+    // {
+      //   title: "Pujasera: Pusat Jajanan Serba Ada application engine based",
+      //   description:
+    //   "College project about application for ordering food and drinks.",
+    //   tech: ["Figma", "Prototyping", "User Research"],
+    //   image: "/iPhone 16.png",
+    //   link: "https://www.figma.com/design/pLUo5APZyVOZu6BeQtfal1/Pujasera?node-id=0-1&t=iyPabscMzHugHGA2-1",
+    //   category: "uiux",
+    // },
     {
       title: "LUMINA: An AI-Based Digital Solution for Mental Health Management in Indonesian Youth",
       description:
-        "Individual project from course assignments.",
+      "Individual project from course assignments.",
       tech: ["Figma", "Prototyping", "User Research"],
       image: "/iPhone 15 Pro.png",
       link: "https://www.figma.com/design/dlG0CXnWZeJH1ggSGnyJxZ/Project-UIUX-Prak?node-id=51-14&t=UTsPSfDeoHuCsORm-1",
       category: "uiux",
     },
+    {
+      title: "ResQ: AI-based disaster preparedness",
+      description:
+        "Project from a national competition that won 3rd Place",
+      tech: ["Figma", "Prototyping", "User Research"],
+      image: "/Screenshot 2025-08-17 161543.png",
+      link: "https://www.figma.com/design/Ui7GPPP9ZH5XLfPFwUooEh/ResQ?node-id=912-66&t=gvV65VOxTb8avhhV-1",
+      category: "uiux",
+    },
   ];
   const filteredProjects =
     activeProjectCategory === "all"
-      ? projects
-      : projects.filter(
-          (project) => project.category === activeProjectCategory
+    ? projects
+    : projects.filter(
+      (project) => project.category === activeProjectCategory
         );
     useEffect(()=>{
     window.scrollTo({
