@@ -92,7 +92,7 @@ const projects = [
         "A book collection management system with user-friendly interface for tracking and organizing personal book collections.",
       tech: ["PostgreSql", "Laravel"],
       image: "/image.png",
-      link: "https://github.com/fahmi-blip/koleksi-buku.git",
+      link: "https://github.com/fahmi-blip/koleksi_buku.git",
       category: "web",
     },
     // {
