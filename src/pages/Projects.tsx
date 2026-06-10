@@ -18,6 +18,7 @@ export default function ProjectPage() {
      const projectCategories = [
     { id: "all", label: "All Projects" },
     { id: "web", label: "Web Development" },
+    { id: "front-end", label: "CMS/Landing Page" },
     { id: "uiux", label: "UI/UX Design" },
     // { id: "graphic", label: "Graphic Design" },
   ];
@@ -38,7 +39,7 @@ const projects = [
       tech: ["Webflow"],
       image: "/Screenshot 2025-08-16 083122.png",
       link: "https://equivoice.webflow.io/",
-      category: "web",
+      category: "front-end",
     },
     {
       title: "Admin Dashboard Storage and Sales of goods",
@@ -56,7 +57,7 @@ const projects = [
       tech: ["Wordpress"],
       image: "/Screenshot 2026-05-22 131730.png",
       link: "https://fahmi498.wordpress.com/",
-      category: "web",
+      category: "front-end",
     },
     {
       title: "Landing Page Trip Planning",
@@ -65,7 +66,7 @@ const projects = [
       tech: ["HTML", "CSS", "JavaScript"],
       image: "Screenshot 2026-05-22 140413.png",
       link: "https://fahmi-blip.github.io/landing-page-trip/",
-      category: "web",
+      category: "front-end",
     },
     {
       title: "Website Movie Explorer",
@@ -74,7 +75,7 @@ const projects = [
       tech: ["HTML","CSS", "JavaScript"],
       image: "/Screenshot 2026-05-22 135134.png",
       link: "https://fahmi-blip.github.io/Website-Film-API/",
-      category: "web",
+      category: "front-end",
     },
     {
       title: "Animal Hospital Management System",
@@ -83,6 +84,15 @@ const projects = [
       tech: ["MySql", "Laravel"],
       image: "/Screenshot 2026-05-22 141322.png",
       link: "https://github.com/fahmi-blip/rshp-breeze.git",
+      category: "web",
+    },
+    {
+      title: "Book Collection Management System",
+      description:
+        "A book collection management system with user-friendly interface for tracking and organizing personal book collections.",
+      tech: ["PostgreSql", "Laravel"],
+      image: "/image.png",
+      link: "https://github.com/fahmi-blip/koleksi-buku.git",
       category: "web",
     },
     // {
