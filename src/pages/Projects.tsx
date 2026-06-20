@@ -24,7 +24,7 @@ export default function ProjectPage() {
   ];
 const projects = [
     {
-    title: "E-Commerce Platform (Ongoing)",
+    title: "E-Commerce Platform",
       description:
         "E-Commerce platform for Fashion and Beauty products.",
       tech: ["Webflow", "TypeScript", "React"],
